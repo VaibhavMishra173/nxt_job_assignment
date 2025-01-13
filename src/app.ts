@@ -1,16 +1,31 @@
-import express, { Application } from "express";
-import dotenv from "dotenv";
-import jobRoutes from "./routes/job.routes";
-import sequelize from "./config/database";
+import express from 'express';
+import cors from 'cors';
+import jobRoutes from './routes/job.routes';
+import sequelize from './config/database';
 
-dotenv.config();
+const app = express();
 
-const app: Application = express();
+app.use(cors());
 app.use(express.json());
-app.use("/api", jobRoutes);
+app.use('/api', jobRoutes);
 
-sequelize.sync({ alter: true }).then(() => {
-  console.log("Database synced");
-});
+// Database & migrations initialization
+const initDatabase = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Database connection established successfully.');
+    
+    // Sync database (in development)
+    if (process.env.NODE_ENV === 'development') {
+      await sequelize.sync();
+      console.log('Database synchronized successfully.');
+    }
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+    process.exit(1);
+  }
+};
+
+initDatabase();
 
 export default app;
