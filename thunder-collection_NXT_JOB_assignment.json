@@ -1,0 +1,81 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "NXT_JOB_assignment",
+    "collectionId": "11dcfc3c-d9f1-44cb-b13d-3c567bebf6a9",
+    "dateExported": "2025-01-13T18:13:00.319Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "26ed7025-f6ea-4c6b-8be8-478bc26eff01",
+            "colId": "11dcfc3c-d9f1-44cb-b13d-3c567bebf6a9",
+            "containerId": "",
+            "name": "Delete job by ID",
+            "url": "http://localhost:3000/api/jobs/7",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2025-01-13T18:11:49.084Z",
+            "modified": "2025-01-13T18:11:49.084Z",
+            "headers": []
+        },
+        {
+            "_id": "101fe3ad-5537-45ca-b147-9a553d2d5706",
+            "colId": "11dcfc3c-d9f1-44cb-b13d-3c567bebf6a9",
+            "containerId": "",
+            "name": "Update job by id",
+            "url": "http://localhost:3000/api/jobs/1",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2025-01-13T18:12:02.722Z",
+            "modified": "2025-01-13T18:12:02.722Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"BE - edited\",\n  \"company\": \"NJ\",\n  \"location\": \"GOA\",\n  \"salary\": 123456,\n  \"description\": \"testing\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "7c1b2609-d86a-4894-8efe-4f4beaba8d4b",
+            "colId": "11dcfc3c-d9f1-44cb-b13d-3c567bebf6a9",
+            "containerId": "",
+            "name": "Get job by ID",
+            "url": "http://localhost:3000/api/jobs/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-01-13T18:12:08.676Z",
+            "modified": "2025-01-13T18:12:08.676Z",
+            "headers": []
+        },
+        {
+            "_id": "88d47124-1c68-4f21-b500-494d971689cc",
+            "colId": "11dcfc3c-d9f1-44cb-b13d-3c567bebf6a9",
+            "containerId": "",
+            "name": "Get all jobs",
+            "url": "http://localhost:3000/api/jobs",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-01-13T18:12:14.497Z",
+            "modified": "2025-01-13T18:12:14.497Z",
+            "headers": []
+        },
+        {
+            "_id": "53f58446-807f-4731-a11a-1c86d387d58f",
+            "colId": "11dcfc3c-d9f1-44cb-b13d-3c567bebf6a9",
+            "containerId": "",
+            "name": "Create a new job",
+            "url": "http://localhost:3000/api/jobs",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-01-13T18:12:19.747Z",
+            "modified": "2025-01-13T18:12:19.747Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"BE\",\n  \"company\": \"NJ\",\n  \"location\": \"GOA\",\n  \"salary\": 123456,\n  \"description\": \"testing\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "XTyZfZy7WVWt6YIffSoDdrmLsw0uyVXzNhKmGqvjovw6pNEYNPbtIdV_pQSiMp23RWjvOzWsSqML4Q5cp1ezfA"
+}
