@@ -3,30 +3,40 @@ version: "3.8"
 services:
   app:
     build: .
+    container_name: job-board-app
     ports:
       - "3000:3000"
     environment:
-      DB_HOST: job-board-db
+      DB_HOST: mysql
       DB_PORT: 3306
       DB_USER: root
       DB_PASSWORD: password
-      DB_NAME: job-board-db
+      DB_NAME: job_board
     depends_on:
       - mysql
     networks:
       - app-network
+    command: sh -c "chmod +x ./wait-for-mysql.sh && ./wait-for-mysql.sh && npx sequelize-cli db:migrate && npm run dev"
+    volumes:
+      - .:/app
+      - /app/node_modules
 
   mysql:
-    image: mysql:latest
+    image: mysql:8.0
     container_name: job-board-db
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: job-board-db
+      MYSQL_DATABASE: job_board
     ports:
       - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
     networks:
       - app-network
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  mysql-data:
